@@ -1,22 +1,22 @@
 """This is a student record registring in course"""
 from fastapi import FastAPI,HTTPException
 from core.handler import st_handler
-from core.handler.st_handler import create,get_all_data,update,delete
+from core.handler.st_handler import Crud
 from schema.models import Student
 app = FastAPI()
-
+obj = Crud()
 
 @app.post("/add/")
 def post_data(student:Student):
-    return create(student)
+    return obj.create(student)
 @app.get("/")
 def get_data():
-    return get_all_data()
+    return obj.get_all_data()
 
 @app.put("/update/{id}")
 def update_data(id:int,student:Student):
-    return update(id,student)
+    return obj.update(id,student)
 
 @app.delete("/delete/{id}")
 def delete_data(id:int):
-    return delete(id)
+    return obj.delete(id)
