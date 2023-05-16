@@ -6,3 +6,4 @@ class Student(BaseModel):
     registration_no: int
     course_id: int
     course_name: str
+    price: int
