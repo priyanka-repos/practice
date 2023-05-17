@@ -2,7 +2,10 @@
 from fastapi import FastAPI,HTTPException
 from core.handler import st_handler
 from core.handler.st_handler import Crud
-from schema.models import Student
+from schema.models import Student,EmailClass
+
+
+
 app = FastAPI()
 obj = Crud()
 
@@ -20,3 +23,8 @@ def update_data(id:int,student:Student):
 @app.delete("/delete/{id}")
 def delete_data(id:int):
     return obj.delete(id)
+@app.post("/send_email")
+def email_testing(email:EmailClass):
+    return obj.send_email(email)
+
+

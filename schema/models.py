@@ -7,3 +7,8 @@ class Student(BaseModel):
     course_id: int
     course_name: str
     price: int
+
+class EmailClass(BaseModel):
+        rec_email: str
+        subject: str
+        # body: str    
