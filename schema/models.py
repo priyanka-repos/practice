@@ -11,4 +11,4 @@ class Student(BaseModel):
 class EmailClass(BaseModel):
         rec_email: str
         subject: str
-        # body: str    
+        # body: str  .  
